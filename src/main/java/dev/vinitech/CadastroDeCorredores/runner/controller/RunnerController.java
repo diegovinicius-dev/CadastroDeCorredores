@@ -1,4 +1,4 @@
-package dev.vinitech.CadastroDeCorredores.controller;
+package dev.vinitech.CadastroDeCorredores.runner.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +10,7 @@ public class RunnerController {
 
     @GetMapping("/teste")
     public String testApi() {
-        return "Corredor API está funcionando!";
+        return "Runner API funcionando!";
     }
 
 }
