@@ -8,11 +8,9 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "tb_trainings")
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 public class TrainingModel {
 
     @Id
