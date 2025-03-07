@@ -8,11 +8,9 @@ import java.util.List;
 
 @Entity
 @Table(name = "tb_runners")
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 public class RunnerModel {
 
     @Id
