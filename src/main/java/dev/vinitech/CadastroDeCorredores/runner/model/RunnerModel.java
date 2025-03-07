@@ -1,7 +1,9 @@
 package dev.vinitech.CadastroDeCorredores.runner.model;
+import dev.vinitech.CadastroDeCorredores.training.model.TrainingModel;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -33,6 +35,6 @@ public class RunnerModel {
     private String team; // Equipe de corrida ou Individual
 
     @OneToMany(mappedBy = "runner", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<TrainingModel> trainings;
+    private List<TrainingModel> trainings = new ArrayList<>();
 
 }
