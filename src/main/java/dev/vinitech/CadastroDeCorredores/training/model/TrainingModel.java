@@ -20,9 +20,9 @@ public class TrainingModel {
     @Column(nullable = false, name = "data_treino")
     private LocalDate date;
 
-    @Enumerated(EnumType.STRING)
+/*    @Enumerated(EnumType.STRING)
     @Column(nullable = false, name = "tipo_treino")
-    private TrainingType type; // TODO: Enum com tipos de treino(Longão, Ritmo, Intervalado, Aclive...)
+    private TrainingType type; // TODO: Enum com tipos de treino(Longão, Ritmo, Intervalado, Aclive...)*/
 
     @Column(nullable = false, name = "distancia")
     private double distance; // em KM
@@ -37,7 +37,7 @@ public class TrainingModel {
     @JoinColumn(name = "runner_id", nullable = false) // Aqui cria a chave estrangeira
     private RunnerModel runner;
 
-    @Enumerated(EnumType.STRING)
-    private TrainingZone zone; // TODO: Criar classe zona de treinamento
+/*    @Enumerated(EnumType.STRING)
+    private TrainingZone zone; // TODO: Criar classe zona de treinamento*/
 
 }
