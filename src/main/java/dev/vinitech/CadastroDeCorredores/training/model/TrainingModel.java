@@ -17,19 +17,20 @@ public class TrainingModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "data_treino")
     private LocalDate date;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(nullable = false, name = "tipo_treino")
     private TrainingType type; // TODO: Enum com tipos de treino(Longão, Ritmo, Intervalado, Aclive...)
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "distancia")
     private double distance; // em KM
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "duracao")
     private Duration duration;
 
+    @Column(name = "pace")
     private double pace; // ritmo médio (min/km), TODO: criar formula depois
 
     @ManyToOne
