@@ -18,13 +18,13 @@ public class RunnerController {
     }
 
     // Mostrar todos os corredores (READ)
-    @GetMapping("/todos")
+    @GetMapping("/listar")
     public String mostrarTodosOsCorredores() {
         return "Mostrar corredores";
     }
 
     // Mostrar corredores por ID (READ)
-    @GetMapping("/todosID")
+    @GetMapping("/listarID")
     public String mostrarTodosOsCorredoresPorId() {
         return "Mostrar corredores por ID";
     }
