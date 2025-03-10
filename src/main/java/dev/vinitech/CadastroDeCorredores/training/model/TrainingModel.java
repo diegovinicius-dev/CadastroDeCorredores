@@ -3,8 +3,8 @@ package dev.vinitech.CadastroDeCorredores.training.model;
 import dev.vinitech.CadastroDeCorredores.runner.model.RunnerModel;
 import jakarta.persistence.*;
 import lombok.*;
-import java.time.Duration;
-import java.time.LocalDate;
+
+
 
 @Entity
 @Table(name = "tb_trainings")
@@ -17,27 +17,20 @@ public class TrainingModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, name = "data_treino")
-    private LocalDate date;
-
-/*    @Enumerated(EnumType.STRING)
-    @Column(nullable = false, name = "tipo_treino")
-    private TrainingType type; // TODO: Enum com tipos de treino(Longão, Ritmo, Intervalado, Aclive...)*/
-
-    @Column(nullable = false, name = "distancia")
-    private double distance; // em KM
-
-    @Column(nullable = false, name = "duracao")
-    private Duration duration;
-
-    @Column(name = "pace")
-    private double pace; // ritmo médio (min/km), TODO: criar formula depois
+    @Enumerated
+    @Column(name = "tipo_treino", nullable = false)
+    private TrainingType trainingType;
 
     @ManyToOne
-    @JoinColumn(name = "runner_id", nullable = false) // Aqui cria a chave estrangeira
+    @JoinColumn(name = "runner_id", nullable = false)
     private RunnerModel runner;
 
-/*    @Enumerated(EnumType.STRING)
-    private TrainingZone zone; // TODO: Criar classe zona de treinamento*/
+    public enum TrainingType {
+        VELOCIDADE,
+        FORCA_ESPECIFICA,
+        LONGAO,
+        RITMO,
+        INTERVALADO
+    }
 
 }
